@@ -5,6 +5,8 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "sonner";
 import { SetStepType } from "@/types";
+import { BackButton, SubmitButton } from "@/components/userModal/ui";
+
 const StepThree = ({
   user,
   setStep,
@@ -62,10 +64,8 @@ const StepThree = ({
           <input type="hidden" {...register("age")} />
         </div>
         <div className="flex gap-x-5">
-          <Button type="button" onClick={() => setStep(2)}>
-            Back
-          </Button>
-          <Button>Finish</Button>
+          <BackButton setStep={setStep} nextStep={3} currentStep={3} />
+          <SubmitButton title="Finish" />
         </div>
       </form>
     </div>

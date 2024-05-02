@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { SetUserType, SetStepType } from "@/types";
+import { BackButton, SubmitButton } from "@/components/userModal/ui";
 
 const StepTwo = ({
   user,
@@ -64,10 +65,8 @@ const StepTwo = ({
           )}
         </div>
         <div className="flex gap-x-5">
-          <Button type="button" onClick={() => setStep(1)}>
-            Back
-          </Button>
-          <Button>Next</Button>
+          <BackButton setStep={setStep} nextStep={3} currentStep={2} />
+          <SubmitButton title="Next" />
         </div>
       </form>
     </div>
