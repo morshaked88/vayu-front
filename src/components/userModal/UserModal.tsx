@@ -22,7 +22,7 @@ const UserModal = () => {
   };
 
   return (
-    <Dialog open={isOpen}>
+    <Dialog open={isOpen} onOpenChange={handleIsOpen}>
       <DialogTrigger
         className="px-4 py-1 mt-6 border rounded-md bg-blue-600 text-white font-medium"
         onClick={handleIsOpen}
