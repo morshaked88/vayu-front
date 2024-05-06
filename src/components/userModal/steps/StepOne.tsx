@@ -96,7 +96,7 @@ const StepOne = ({
           )}
         </div>
         <div className="flex gap-x-5">
-          <BackButton setStep={setStep} nextStep={2} currentStep={step} />
+          <BackButton setStep={setStep} currentStep={step} />
           <SubmitButton title="Next" />
         </div>
       </form>

@@ -4,11 +4,9 @@ import React from "react";
 
 const BackButton = ({
   currentStep,
-  nextStep,
   setStep,
 }: {
   currentStep: StepType;
-  nextStep: StepType;
   setStep: SetStepType;
 }) => {
   return (
