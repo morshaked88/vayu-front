@@ -6,14 +6,16 @@ import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { SetUserType, SetStepType } from "@/types";
+import { SetUserType, SetStepType, StepType } from "@/types";
 import { BackButton, SubmitButton } from "@/components/userModal/ui";
 
 const StepTwo = ({
+  step,
   user,
   setUser,
   setStep,
 }: {
+  step: StepType;
   user: TUserAgeType;
   setUser: SetUserType;
   setStep: SetStepType;
@@ -65,7 +67,7 @@ const StepTwo = ({
           )}
         </div>
         <div className="flex gap-x-5">
-          <BackButton setStep={setStep} nextStep={3} currentStep={2} />
+          <BackButton setStep={setStep} nextStep={3} currentStep={step} />
           <SubmitButton title="Next" />
         </div>
       </form>

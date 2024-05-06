@@ -14,7 +14,7 @@ const BackButton = ({
   return (
     <Button
       type="button"
-      onClick={() => setStep(nextStep)}
+      onClick={() => setStep((currentStep - 1) as StepType)}
       disabled={currentStep === 1}
     >
       Back

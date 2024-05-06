@@ -41,6 +41,8 @@ export const userAgeValidator = z.object({
   ),
 });
 
+
+
 //merge the two types to be submitted to the form final step
 export const userValidator = userNameValidator.merge(userAgeValidator);
 

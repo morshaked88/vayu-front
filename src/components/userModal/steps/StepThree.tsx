@@ -4,14 +4,16 @@ import { TUserType, userValidator } from "@/validators/user-validator";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "sonner";
-import { SetStepType } from "@/types";
+import { SetStepType, StepType } from "@/types";
 import { BackButton, SubmitButton } from "@/components/userModal/ui";
 
 const StepThree = ({
+  step,
   user,
   setStep,
   handleClearForm,
 }: {
+  step: StepType;
   user: TUserType;
   setStep: SetStepType;
   handleClearForm: () => void;
@@ -64,7 +66,7 @@ const StepThree = ({
           <input type="hidden" {...register("age")} />
         </div>
         <div className="flex gap-x-5">
-          <BackButton setStep={setStep} nextStep={3} currentStep={3} />
+          <BackButton setStep={setStep} nextStep={3} currentStep={step} />
           <SubmitButton title="Finish" />
         </div>
       </form>

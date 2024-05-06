@@ -6,17 +6,18 @@ import {
 import { useForm } from "react-hook-form";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { SetUserType, SetStepType } from "@/types";
+import { SetUserType, SetStepType, StepType } from "@/types";
 import { BackButton, SubmitButton } from "@/components/userModal/ui";
 
 const StepOne = ({
+  step,
   user,
   setUser,
   setStep,
 }: {
+  step: StepType;
   user: TUserType;
   setUser: SetUserType;
   setStep: SetStepType;
@@ -95,7 +96,7 @@ const StepOne = ({
           )}
         </div>
         <div className="flex gap-x-5">
-          <BackButton setStep={setStep} nextStep={2} currentStep={1} />
+          <BackButton setStep={setStep} nextStep={2} currentStep={step} />
           <SubmitButton title="Next" />
         </div>
       </form>

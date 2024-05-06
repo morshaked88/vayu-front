@@ -31,16 +31,27 @@ const UserModal = () => {
       </DialogTrigger>
       <DialogContent className="flex justify-center min-h-52">
         {step === 1 && (
-          <StepOne setUser={setUser} setStep={setStep} user={user} />
+          <StepOne
+            setUser={setUser}
+            setStep={setStep}
+            user={user}
+            step={step}
+          />
         )}
         {step === 2 && (
-          <StepTwo setUser={setUser} setStep={setStep} user={user} />
+          <StepTwo
+            setUser={setUser}
+            setStep={setStep}
+            user={user}
+            step={step}
+          />
         )}
         {step === 3 && (
           <StepThree
             user={user}
             setStep={setStep}
             handleClearForm={handleClearForm}
+            step={step}
           />
         )}
       </DialogContent>
